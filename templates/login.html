@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}
+Log In
+{% endblock %}
+
+{% block content %}
+<h2>Login</h2>
+<form action="login" method="post">
+    {% csrf_token %}
+    <label>Username</label>
+    <input type="text" name="username" placeholder="enter username"><br>
+    <label>Password</label>
+    <input type="password" name="password" placeholder="enter password"><br>
+    <input type="submit">
+</form>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+{% endblock content %}
