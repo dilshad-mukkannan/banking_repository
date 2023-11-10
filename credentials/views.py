@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect
 # Create your views here.
 
 
+
 def login(request):
     if request.method=='POST':
         username=request.POST['username']
@@ -13,7 +14,7 @@ def login(request):
         user=auth.authenticate(username=username,password=password)
         if user is not None:
             auth.login(request,user)
-            return redirect('/')
+            return redirect('new_page')
         else:
             messages.info(request,"invalid credentials")
             return redirect('login')
@@ -45,3 +46,6 @@ def register(request):
 def logout(request):
     auth.logout(request)
     return redirect('/')
+
+def new_page(request):
+    return render(request, 'new_page.html')

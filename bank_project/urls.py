@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("bank_app.urls")),
     path('credentials/', include("credentials.urls")),
+    path('chaining/', include('smart_selects.urls')),
 
 ]
 if settings.DEBUG:

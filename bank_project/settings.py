@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bank_app',
     'credentials',
+    'smart_selects',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'bank_app.context_processors.district_links',
             ],
         },
     },
@@ -124,4 +126,6 @@ STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
 STATIC_ROOT=os.path.join(BASE_DIR,'assets')
 MEDIA_URL= '/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+
+USE_DJANGO_JQUERY = True
 

@@ -1,1 +1,13 @@
-<h1>hi</h1>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div>
+    <div>
+        <div>
+<a href="{% url 'form' %}" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Click To Submit Form</a>
+    </div>
+    </div>
+    </div>
+{% endblock content %}
+

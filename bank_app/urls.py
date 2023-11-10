@@ -1,10 +1,9 @@
 from django.contrib import admin
 from django.urls import path, include
-from .views import demo, new_page
+from . import views
 
 urlpatterns = [
-    path('', demo, name='demo'),
-    path('new/', new_page, name='new_page' ),
-
+    path('', views.demo, name='demo'),
+    path('form/',views.create_form,name='form')
 
 ]
